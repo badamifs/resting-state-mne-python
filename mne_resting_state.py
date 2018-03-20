@@ -22,7 +22,7 @@ raw.info['bads'] = ['E257']
 picks = mne.pick_types(raw.info, meg=False, eeg=True, stim=False,
                        exclude='bads')
 
-
+#Epoch data 
 n_epochs=100
 Fs = raw.info['sfreq']
 rdata = raw.get_data()
