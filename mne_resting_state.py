@@ -10,8 +10,8 @@ from mne.preprocessing import ICA
 
 
 # getting some data ready
-data_path = '/Users/kratos/Documents/restingdata/best_saline/best_3001_tp1_saline_eeg/best_3001_tp1_saline_eeg_rs1_eyes_closed/'
-raw_fname = data_path + 'best_3001_tp1_saline_eeg_rs1_eyes_closed.mff'
+data_path = ''
+raw_fname = data_path + '.mff'
 
 raw = mne.io.read_raw_egi(raw_fname, preload=True)
 info = raw.info
@@ -22,7 +22,7 @@ raw.info['bads'] = ['E257']
 picks = mne.pick_types(raw.info, meg=False, eeg=True, stim=False,
                        exclude='bads')
 
-
+#Epoch data 
 n_epochs=100
 Fs = raw.info['sfreq']
 rdata = raw.get_data()
